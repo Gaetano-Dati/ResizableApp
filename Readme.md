@@ -20,13 +20,36 @@
 
 ## 🖥 Screenshots / Demo
 
-![ResizableApp Demo](https://user-images.githubusercontent.com/yourusername/demo.gif)  
-*Example showing BottomBar on phone and NavigationRail on tablet*
+<img src="media/sample.gif" width="500" />
+
+<table>
+  <thead>
+    <tr>
+      <th scope="col">Compact</th>
+      <th scope="col">Large</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>
+        <img src="media/compact-portrait.png" width="200" />
+        <img src="media/compact-portrait-details.png" width="200" />
+        <img src="media/compact-landscape.png" width="450" />
+      </td>
+      <td>
+        <img src="media/large-portrait.png" width="250" />
+        <img src="media/large-portrait-split-screen.png" width="250" />
+        <img src="media/large-landscape-split-screen.png" width="500" />
+      </td>
+    </tr>
+  </tbody>
+</table>
 
 ---
 
 ## 📁 Project Structure
 
+```bash
 com.gd.resizableapp/
 ├─ core/ # Navigation & utilities
 ├─ featuredetail/ # Detail screen
@@ -35,7 +58,7 @@ com.gd.resizableapp/
 ├─ model/ # Data models
 ├─ ui/ # Theme & scaffold
 └─ MainActivity.kt # Entry point
-
+```
 
 ---
 
@@ -43,7 +66,9 @@ com.gd.resizableapp/
 
 ```bash
 git clone https://github.com/gaetano-dati/resizableapp.git
+```
 
-- Open in Android Studio
-- Build & run on any device or emulator
-- Resize window to see adaptive layouts in action
+1. Open in Android Studio
+2. Build & run on any device or emulator
+3. Resize window to see adaptive layouts in action
+4. Rotate the phone to study which data are shown everytime
