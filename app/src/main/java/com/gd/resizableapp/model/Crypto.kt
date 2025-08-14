@@ -1,4 +1,4 @@
-package com.gd.resizableapp
+package com.gd.resizableapp.model
 
 import android.os.Parcelable
 import kotlinx.parcelize.Parcelize

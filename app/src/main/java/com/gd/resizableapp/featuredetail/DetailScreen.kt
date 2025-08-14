@@ -1,4 +1,4 @@
-package com.gd.resizableapp
+package com.gd.resizableapp.featuredetail
 
 import android.content.Intent
 import androidx.compose.foundation.layout.Box
@@ -15,7 +15,6 @@ import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.automirrored.filled.ArrowBack
 import androidx.compose.material3.ButtonDefaults
-import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
 import androidx.compose.material3.MaterialTheme
@@ -28,25 +27,25 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.unit.dp
-import coil3.compose.AsyncImage
 import androidx.core.net.toUri
+import coil3.compose.AsyncImage
+import com.gd.resizableapp.model.Crypto
 
-@OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun SupportingPane(
     modifier: Modifier = Modifier,
-    crypto: Crypto? = null,
+    crypto: Crypto?,
     onBack: () -> Unit
 ) {
     Scaffold(
         contentColor = MaterialTheme.colorScheme.onPrimary,
-        containerColor = MaterialTheme.colorScheme.primary,
+        containerColor = MaterialTheme.colorScheme.primary
     ) { innerPadding ->
         if (crypto != null) {
             DetailScreen(
                 modifier = modifier.padding(innerPadding),
                 crypto = crypto,
-                onBack = { onBack() }
+                onBack = onBack
             )
         } else {
             Box(
@@ -86,29 +85,27 @@ fun DetailScreen(
                     .size(48.dp)
                     .clip(CircleShape),
                 model = crypto.imageUrl,
-                contentDescription = crypto.description,
+                contentDescription = crypto.description
             )
-            Spacer(modifier = Modifier.width(16.dp))
-            Text(
-                text = crypto.name,
-                style = MaterialTheme.typography.headlineLarge
-            )
+            Spacer(Modifier.width(16.dp))
+            Text(text = crypto.name, style = MaterialTheme.typography.headlineLarge)
         }
-        Text(
-            text = "Price: €${crypto.price}",
-            style = MaterialTheme.typography.bodyLarge
-        )
-        Spacer(modifier = Modifier.height(16.dp))
-        Text(
-            text = crypto.description,
-            style = MaterialTheme.typography.bodyMedium
-        )
-        Spacer(modifier = Modifier.height(16.dp))
-        OutlinedButton(onClick = {
-            val intent = Intent(Intent.ACTION_VIEW, crypto.websiteLink.toUri())
-            context.startActivity(intent)
-        }, elevation = ButtonDefaults.elevatedButtonElevation(defaultElevation = 5.dp)) {
-            Text(text = "Go to Website", style = MaterialTheme.typography.bodyMedium, color = MaterialTheme.colorScheme.onPrimary)
+        Text(text = "Price: €${crypto.price}", style = MaterialTheme.typography.bodyLarge)
+        Spacer(Modifier.height(16.dp))
+        Text(text = crypto.description, style = MaterialTheme.typography.bodyMedium)
+        Spacer(Modifier.height(16.dp))
+        OutlinedButton(
+            onClick = {
+                val intent = Intent(Intent.ACTION_VIEW, crypto.websiteLink.toUri())
+                context.startActivity(intent)
+            },
+            elevation = ButtonDefaults.elevatedButtonElevation(defaultElevation = 5.dp)
+        ) {
+            Text(
+                text = "Go to Website",
+                style = MaterialTheme.typography.bodyMedium,
+                color = MaterialTheme.colorScheme.onPrimary
+            )
         }
     }
 }

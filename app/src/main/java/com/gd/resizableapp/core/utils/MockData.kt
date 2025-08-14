@@ -1,6 +1,6 @@
 package com.gd.resizableapp.core.utils
 
-import com.gd.resizableapp.Crypto
+import com.gd.resizableapp.model.Crypto
 
 fun getMockCryptos(): List<Crypto> {
     return listOf(
