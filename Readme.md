@@ -65,7 +65,7 @@ com.gd.resizableapp/
 ## 🚀 How to Run
 
 ```bash
-git clone https://github.com/gaetano-dati/resizableapp.git
+git clone https://github.com/Gaetano-Dati/resizableapp.git
 ```
 
 1. Open in Android Studio
