@@ -29,6 +29,8 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.currentBackStackEntryAsState
 import androidx.navigation.compose.rememberNavController
+import com.gd.resizableapp.core.navigation.AppDestinations
+import com.gd.resizableapp.core.utils.getMockCryptos
 import com.gd.resizableapp.ui.theme.ResizableAppTheme
 import kotlinx.coroutines.launch
 
