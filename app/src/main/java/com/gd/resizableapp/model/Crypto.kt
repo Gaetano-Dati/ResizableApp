@@ -4,14 +4,17 @@ import android.os.Parcelable
 import kotlinx.parcelize.Parcelize
 
 /**
- * Represents a cryptocurrency with basic details.
+ * Represents a cryptocurrency with essential details.
  *
- * @property id Unique identifier (symbol or code).
- * @property name Human-readable name of the cryptocurrency.
- * @property price Current price in Euros.
- * @property imageUrl Link to an image/logo.
- * @property description Short description of the cryptocurrency.
- * @property websiteLink Link to the official website.
+ * This data class is [Parcelable], allowing instances to be passed between
+ * Android components (e.g., activities or fragments).
+ *
+ * @property id A unique identifier for the cryptocurrency (e.g., "btc").
+ * @property name The human-readable name of the cryptocurrency (e.g., "Bitcoin").
+ * @property price The current price of the cryptocurrency in euros.
+ * @property imageUrl A URL pointing to an image or logo representing the cryptocurrency.
+ * @property description A brief description of the cryptocurrency.
+ * @property websiteLink The official website or homepage of the cryptocurrency.
  */
 @Parcelize
 data class Crypto(

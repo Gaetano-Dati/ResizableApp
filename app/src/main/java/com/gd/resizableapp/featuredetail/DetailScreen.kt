@@ -31,6 +31,19 @@ import androidx.core.net.toUri
 import coil3.compose.AsyncImage
 import com.gd.resizableapp.model.Crypto
 
+/**
+ * Displays the detail pane for a selected cryptocurrency within a list-detail layout.
+ *
+ * If a [crypto] is provided, it shows the [DetailScreen] for that cryptocurrency.
+ * If no [crypto] is selected, it shows a placeholder message prompting the user
+ * to select an item from the list.
+ *
+ * This composable is typically used in combination with a [androidx.compose.material3.adaptive.layout.ListDetailPaneScaffold].
+ *
+ * @param modifier A [Modifier] for styling and layout adjustments.
+ * @param crypto The currently selected [Crypto] to display, or null if none is selected.
+ * @param onBack Lambda to handle back navigation from the detail screen.
+ */
 @Composable
 fun SupportingPane(
     modifier: Modifier = Modifier,
@@ -60,6 +73,16 @@ fun SupportingPane(
     }
 }
 
+/**
+ * Displays detailed information about a single cryptocurrency.
+ *
+ * Shows the crypto's name, image, price, description, and provides a button
+ * to open its official website. Includes a back button for navigation.
+ *
+ * @param modifier A [Modifier] for styling and layout adjustments.
+ * @param crypto The [Crypto] object whose details are displayed.
+ * @param onBack Lambda invoked when the back button is clicked.
+ */
 @Composable
 fun DetailScreen(
     modifier: Modifier = Modifier,

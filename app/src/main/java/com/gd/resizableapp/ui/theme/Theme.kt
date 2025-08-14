@@ -10,18 +10,36 @@ import androidx.compose.material3.lightColorScheme
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.platform.LocalContext
 
+/**
+ * Dark color scheme used in ResizableApp when the system or app theme is dark.
+ */
 private val DarkColorScheme = darkColorScheme(
     primary = Purple80,
     secondary = PurpleGrey80,
     tertiary = Pink80
 )
 
+/**
+ * Light color scheme used in ResizableApp when the system or app theme is light.
+ */
 private val LightColorScheme = lightColorScheme(
     primary = Purple40,
     secondary = PurpleGrey40,
     tertiary = Pink40
 )
 
+/**
+ * Composable that applies the ResizableApp Material3 theme to its content.
+ *
+ * The theme automatically switches between light and dark color schemes depending
+ * on the system setting or the `darkTheme` parameter.
+ *
+ * @param darkTheme If true, applies dark color scheme; if false, applies light color scheme.
+ *                  Defaults to system setting via [isSystemInDarkTheme].
+ * @param dynamicColor If true, uses dynamic color available on Android 12+ based on wallpaper.
+ *                     Defaults to true.
+ * @param content The composable content that will be styled with this theme.
+ */
 @Composable
 fun ResizableAppTheme(
     darkTheme: Boolean = isSystemInDarkTheme(),

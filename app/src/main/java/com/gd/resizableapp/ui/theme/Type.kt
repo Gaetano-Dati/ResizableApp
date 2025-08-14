@@ -6,8 +6,21 @@ import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.sp
 
-// Set of Material typography styles to start with
+/**
+ * Typography definitions for ResizableApp.
+ *
+ * Currently defines the default text styles used throughout the app.
+ */
 val Typography = Typography(
+    /**
+     * Style used for primary body text.
+     *
+     * - Font family: Default
+     * - Font weight: Normal
+     * - Font size: 16sp
+     * - Line height: 24sp
+     * - Letter spacing: 0.5sp
+     */
     bodyLarge = TextStyle(
         fontFamily = FontFamily.Default,
         fontWeight = FontWeight.Normal,

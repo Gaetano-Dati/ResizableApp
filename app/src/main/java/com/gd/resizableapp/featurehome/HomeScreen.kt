@@ -28,6 +28,18 @@ import com.gd.resizableapp.featuredetail.SupportingPane
 import com.gd.resizableapp.featurehome.components.CryptoListItem
 import kotlinx.coroutines.launch
 
+/**
+ * Displays the main list-detail scaffold for cryptocurrencies.
+ *
+ * This composable sets up a two-pane layout using [ListDetailPaneScaffold],
+ * where the list of cryptocurrencies is shown on the left (or main pane),
+ * and the detail view is shown on the right when a crypto is selected.
+ *
+ * Handles back navigation using [BackHandler] to return from the detail pane
+ * to the list pane.
+ *
+ * @param modifier A [Modifier] for styling and layout adjustments.
+ */
 @OptIn(ExperimentalMaterial3AdaptiveApi::class)
 @Composable
 fun ListScaffold(modifier: Modifier = Modifier) {
@@ -64,6 +76,14 @@ fun ListScaffold(modifier: Modifier = Modifier) {
     )
 }
 
+/**
+ * Displays the main list pane containing the list of cryptocurrencies.
+ *
+ * Delegates rendering to [ListScreen], adding animation and safe padding.
+ *
+ * @param cryptos The list of [Crypto] items to display.
+ * @param onCryptoSelected Lambda invoked when a crypto item is selected.
+ */
 @Composable
 fun MainPane(
     cryptos: List<Crypto>,
@@ -78,6 +98,15 @@ fun MainPane(
     )
 }
 
+/**
+ * Displays a vertically scrollable list of cryptocurrencies with a top app bar.
+ *
+ * Each item is rendered using [CryptoListItem]. Clicking an item invokes [onCryptoSelected].
+ *
+ * @param modifier A [Modifier] for styling and layout adjustments.
+ * @param cryptos The list of [Crypto] items to display.
+ * @param onCryptoSelected Lambda invoked when a crypto item is selected.
+ */
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun ListScreen(

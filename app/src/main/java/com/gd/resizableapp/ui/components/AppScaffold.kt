@@ -14,7 +14,19 @@ import androidx.navigation.NavHostController
 import androidx.navigation.compose.currentBackStackEntryAsState
 import com.gd.resizableapp.core.navigation.AppDestinations
 import com.gd.resizableapp.core.navigation.AppNavHost
+import com.gd.resizableapp.core.navigation.navigationSuiteItem
 
+/**
+ * Sets up the main scaffold of the application with a navigation suite.
+ *
+ * This composable handles the overall layout structure including:
+ * - Bottom/side navigation via [NavigationSuiteScaffold].
+ * - Highlighting the currently selected destination.
+ * - Navigation between [AppDestinations] using [NavHostController].
+ *
+ * @param navController The [NavHostController] responsible for navigation
+ * between composable destinations.
+ */
 @Composable
 fun AppScaffold(navController: NavHostController) {
     val navBackStackEntry by navController.currentBackStackEntryAsState()

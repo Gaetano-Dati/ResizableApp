@@ -20,6 +20,15 @@ import androidx.compose.ui.unit.dp
 import coil3.compose.AsyncImage
 import com.gd.resizableapp.model.Crypto
 
+/**
+ * Displays a single cryptocurrency item in a list.
+ *
+ * Shows the crypto's image, name, and price inside a clickable [Card].
+ * This composable is typically used inside a vertical list of cryptocurrencies.
+ *
+ * @param crypto The [Crypto] object containing data to display (name, image, price).
+ * @param onClick Lambda invoked when the user taps on this list item.
+ */
 @Composable
 fun CryptoListItem(crypto: Crypto, onClick: () -> Unit) {
     Card(

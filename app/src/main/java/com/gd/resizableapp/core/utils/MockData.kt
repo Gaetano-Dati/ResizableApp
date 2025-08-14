@@ -2,6 +2,22 @@ package com.gd.resizableapp.core.utils
 
 import com.gd.resizableapp.model.Crypto
 
+/**
+ * Returns a list of mock [Crypto] objects for testing or preview purposes.
+ *
+ * Each [Crypto] object contains:
+ * - [Crypto.id]: A unique identifier (e.g., "btc").
+ * - [Crypto.name]: The name of the cryptocurrency (e.g., "Bitcoin").
+ * - [Crypto.price]: The current price in euros.
+ * - [Crypto.imageUrl]: A placeholder URL representing the crypto logo.
+ * - [Crypto.description]: A brief description of the cryptocurrency.
+ * - [Crypto.websiteLink]: The official website link for more information.
+ *
+ * This function is intended for use in UI previews, testing, or development
+ * where real API data is not yet available.
+ *
+ * @return A [List] of [Crypto] objects with mock data.
+ */
 fun getMockCryptos(): List<Crypto> {
     return listOf(
         Crypto(
