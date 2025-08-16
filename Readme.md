@@ -12,6 +12,7 @@
 
 - Adaptive layouts for multiple screen sizes
 - **NavigationSuiteScaffold**: Unified BottomBar + NavigationRail
+- **ListDetailPaneScaffold** to have an auto-handled ListPane and DetailPane
 - Centralized navigation with `NavHost` & `AppDestinations`
 - Mock cryptocurrency data for demonstration
 - Clean modular Compose architecture
